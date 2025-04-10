@@ -7,7 +7,7 @@ export default function AgregarContacto() {
   const navigate = useNavigate();
 
   const [formulario, setFormulario] = useState({
-    full_name: "",
+    name: "",       // <-- este es el campo correcto
     email: "",
     phone: "",
     address: ""
@@ -30,8 +30,8 @@ export default function AgregarContacto() {
       <form onSubmit={manejarSubmit} className="formulario-contacto">
         <input
           type="text"
-          name="full_name"
-          value={formulario.full_name}
+          name="name"
+          value={formulario.name}
           onChange={manejarCambio}
           placeholder="Nombre completo"
           required

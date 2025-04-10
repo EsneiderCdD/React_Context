@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { ProveedorContacto } from "./componentes/ContactoContexto";
 import Contactos from "./componentes/Contactos";
+import "./App.css";
 import AgregarContacto from "./componentes/AgregarContacto";
 
 function App() {

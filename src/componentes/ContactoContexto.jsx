@@ -25,7 +25,7 @@ export const ProveedorContacto = ({ children }) => {
 
   const crearContacto = async (contacto) => {
     try {
-      const res = await fetch("https://playground.4geeks.com/contact/", {
+      const res = await fetch(`https://playground.4geeks.com/contact/agendas/${AGENDA_SLUG}/contacts`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...contacto, agenda_slug: AGENDA_SLUG }),
@@ -40,7 +40,7 @@ export const ProveedorContacto = ({ children }) => {
 
   const editarContacto = async (id, datosActualizados) => {
     try {
-      const res = await fetch(`https://playground.4geeks.com/contact/${id}`, {
+      const res = await fetch(`https://playground.4geeks.com/contact/agendas/${AGENDA_SLUG}/contacts/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...datosActualizados, agenda_slug: AGENDA_SLUG }),
@@ -55,7 +55,7 @@ export const ProveedorContacto = ({ children }) => {
 
   const eliminarContacto = async (id) => {
     try {
-      const res = await fetch(`https://playground.4geeks.com/contact/${id}`, {
+      const res = await fetch(`https://playground.4geeks.com/contact/agendas/${AGENDA_SLUG}/contacts/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
